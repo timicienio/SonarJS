@@ -121,9 +121,7 @@ abstract class AbstractEslintSensor implements Sensor {
       if (analysisWarnings != null) {
         analysisWarnings.addUnique("JavaScript and/or TypeScript rules were not executed. " + e.getMessage());
       }
-      if (failFast) {
-        throw new IllegalStateException("Analysis failed (\"sonar.internal.analysis.failFast\"=true)", e);
-      }
+      throw new IllegalStateException("Analysis failed (\"sonar.internal.analysis.failFast\"=true)", e);
     } catch (Exception e) {
       LOG.error("Failure during analysis, " + eslintBridgeServer.getCommandInfo(), e);
       if (failFast) {
