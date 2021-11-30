@@ -67,10 +67,10 @@ describe('#analyzeJavaScript', () => {
     sonarlint: false,
   });
 
-  it('should report issue running eslint', async () => {
+  it.only('should report issue running eslint', async () => {
     initLinter([
       { key: 'no-one-iteration-loop', configurations: [], fileTypeTarget: ['MAIN'] },
-      { key: 'no-duplicate-string', configurations: ['2'], fileTypeTarget: ['MAIN'] },
+      { key: 'no-duplicate-string', configurations: [2], fileTypeTarget: ['MAIN'] },
     ]);
     const { issues } = await analyzeJavaScript({
       filePath,
@@ -86,7 +86,7 @@ describe('#analyzeJavaScript', () => {
   it('should analyze test files', async () => {
     initLinter([
       { key: 'no-one-iteration-loop', configurations: [], fileTypeTarget: ['TEST'] },
-      { key: 'no-duplicate-string', configurations: ['2'], fileTypeTarget: ['MAIN'] },
+      { key: 'no-duplicate-string', configurations: [2], fileTypeTarget: ['MAIN'] },
     ]);
     const result = await analyzeJavaScript({
       filePath,
