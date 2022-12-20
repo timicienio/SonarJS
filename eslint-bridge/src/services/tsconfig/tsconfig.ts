@@ -84,11 +84,6 @@ export function getFilesForTsConfig(
 }
 
 /**
- * Any temporary file created with the `tmp` library will be removed once the Node.js process terminates.
- */
-tmp.setGracefulCleanup();
-
-/**
  * Create the TSConfig file and returns its path.
  *
  * The file is written in a temporary location in the file system and is marked to be removed after Node.js process
@@ -103,6 +98,7 @@ export async function writeTSConfigFile(baseDir: string): Promise<{ filename: st
     compilerOptions: {
       allowJs: true,
       noImplicitAny: true,
+      rootDir: baseDir,
     },
     include: [baseDir + '/**/*'],
   };

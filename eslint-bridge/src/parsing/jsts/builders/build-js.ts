@@ -41,14 +41,15 @@ import { buildParserOptions, parsers, parseForESLint } from 'parsing/jsts';
  */
 export function buildJs(input: JsTsAnalysisInput, tryTypeScriptESLintParser: boolean): SourceCode {
   if (tryTypeScriptESLintParser) {
+    const options = buildParserOptions(input, false);
     try {
-      return parseForESLint(
-        input.fileContent,
-        parsers.typescript.parse,
-        buildParserOptions(input, false),
-      );
+      return parseForESLint(input.fileContent, parsers.typescript.parse, options);
     } catch (error) {
       debug(`Failed to parse ${input.filePath} with TypeScript parser: ${error.message}`);
+      console.log('WARN ', options);
+      console.log(
+        `WARN Failed to parse ${input.filePath} with TypeScript parser: ${error.message}`,
+      );
     }
   }
 

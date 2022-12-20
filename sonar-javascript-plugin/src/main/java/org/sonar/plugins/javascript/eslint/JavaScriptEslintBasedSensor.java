@@ -20,6 +20,7 @@
 package org.sonar.plugins.javascript.eslint;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -80,6 +81,7 @@ public class JavaScriptEslintBasedSensor extends AbstractEslintSensor {
 
   private void runEslintAnalysis(List<String> tsConfigs, List<InputFile> inputFiles) throws IOException {
     analysisMode = AnalysisMode.getMode(context, checks.eslintRules());
+    System.out.println(Arrays.toString(tsConfigs.toArray()));
     ProgressReport progressReport = new ProgressReport("Analysis progress", TimeUnit.SECONDS.toMillis(10));
     boolean success = false;
     try {
