@@ -1,1 +1,0 @@
-var angular = 1;

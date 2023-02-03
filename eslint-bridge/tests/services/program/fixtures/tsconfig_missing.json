@@ -1,3 +1,0 @@
-{
-  "extends": "@tsconfig/node_missing/tsconfig.json"
-}

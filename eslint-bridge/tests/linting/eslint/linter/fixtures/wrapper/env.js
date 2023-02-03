@@ -1,1 +1,0 @@
-var alert = 1;

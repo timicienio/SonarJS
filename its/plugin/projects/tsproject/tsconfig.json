@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-      "module": "es2020",
-    "target": "es6",  
-    "allowJs": true
-  },
-  "files": ["sample.lint.ts", "duplication.lint.ts", "nosonar.lint.ts"]
-}

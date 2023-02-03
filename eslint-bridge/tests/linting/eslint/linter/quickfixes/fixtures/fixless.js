@@ -1,3 +1,0 @@
-myLabel: while (true) {
-  foo();
-}

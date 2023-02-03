@@ -1,9 +1,0 @@
-{
-  "comment": "this file is used to test that we support cycle in references",
-  "files": [],
-  "references": [
-    {
-      "path": "tsconfig.app.json"
-    }
-  ]
-}
