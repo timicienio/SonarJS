@@ -49,7 +49,7 @@ public final class OrchestratorStarter implements BeforeAllCallback, ExtensionCo
 
   public static final Orchestrator ORCHESTRATOR = Orchestrator.builderEnv()
     .useDefaultAdminCredentialsForBuilds(true)
-    .setSonarVersion(System.getProperty("sonar.runtimeVersion", "LATEST_RELEASE"))
+    .setSonarVersion(System.getProperty("sonar.runtimeVersion", "9.8.0.63668"))
     .addPlugin(MavenLocation.of("org.sonarsource.php", "sonar-php-plugin", "LATEST_RELEASE"))
     .addPlugin(MavenLocation.of("org.sonarsource.html", "sonar-html-plugin", "LATEST_RELEASE"))
     // required to load YAML files

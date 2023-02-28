@@ -1,5 +1,40 @@
+<h2>Why is this an issue?</h2>
 <p>If a local variable or a local function is declared but not used, it is dead code and should be removed. Doing so will improve maintainability
 because developers will not wonder what the variable or function is used for.</p>
+<h3>What is the potential impact?</h3>
+<h4>Dead code</h4>
+<p>Unused variable or local function usually happens after some code change, so that some logic becomes not needed anymore. In that case such code
+becomes unused and never executed.</p>
+<p>Also, if you are writing code for the front-end then every unused variable or function that remains in your codebase is just extra bytes you have
+to send over the wire to your users. Unused code bloats your codebase unnecessarily and impacts the performance of your application.</p>
+<h4>Wrong logic</h4>
+<p>It could happen that due to a bad copy-paste or autocompletion the wrong variable is used, while the right one is only declared. In that case the
+unused variable should be used instead of deleted from the codebase.</p>
+<h4>Memory leaks</h4>
+<p>Finally unused functions can also cause memory leaks. For example, an unused function can create a closure over a variable that would otherwise be
+released to the garbage collector.</p>
+<pre>
+let theThing = null;
+const replaceThing = function () {
+  const originalThing = theThing;
+  const unused = function () {
+    if (originalThing) {
+      console.log("hi");
+    }
+  };
+  theThing = {
+    longStr: new Array(1000000).join("*"),
+    someMethod: function () {
+      console.log(someMessage);
+    },
+  };
+};
+setInterval(replaceThing, 1000);
+</pre>
+<h2>How to fix it?</h2>
+<h3>How to fix it in JS/TS Core</h3>
+<p>Usually the fix for this issue is straightforward, you just need to remove unused variable declaration, or its name from the declaration statement
+if it’s declared along with other variables.</p>
 <h2>Noncompliant Code Example</h2>
 <pre>
 function numberOfMinutes(hours) {
