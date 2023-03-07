@@ -3,15 +3,15 @@
 because developers will not wonder what the variable or function is used for.</p>
 <h3>What is the potential impact?</h3>
 <h4>Dead code</h4>
-<p>Unused variable or local function usually happens after some code change, so that some logic becomes not needed anymore. In that case such code
-becomes unused and never executed.</p>
-<p>Also, if you are writing code for the front-end then every unused variable or function that remains in your codebase is just extra bytes you have
-to send over the wire to your users. Unused code bloats your codebase unnecessarily and impacts the performance of your application.</p>
+<p>An unused variable or local function usually occurs because some logic is no longer required after a code change. In that case, such code becomes
+unused and never executed.</p>
+<p>Also, if you are writing code for the front-end, every unused variable or function remaining in your codebase is just extra bytes you have to send
+over the wire to your users. Unused code bloats your codebase unnecessarily and impacts the performance of your application.</p>
 <h4>Wrong logic</h4>
-<p>It could happen that due to a bad copy-paste or autocompletion the wrong variable is used, while the right one is only declared. In that case the
+<p>It could happen that due to a bad copy-paste or autocompletion, the wrong variable is used, while the right one is only declared. In that case, the
 unused variable should be used instead of deleted from the codebase.</p>
 <h4>Memory leaks</h4>
-<p>Finally unused functions can also cause memory leaks. For example, an unused function can create a closure over a variable that would otherwise be
+<p>Finally, unused functions can also cause memory leaks. For example, an unused function can create a closure over a variable that would otherwise be
 released to the garbage collector.</p>
 <pre>
 let theThing = null;
@@ -31,9 +31,9 @@ const replaceThing = function () {
 };
 setInterval(replaceThing, 1000);
 </pre>
-<h2>How to fix it?</h2>
-<p>Usually the fix for this issue is straightforward, you just need to remove unused variable declaration, or its name from the declaration statement
-if it’s declared along with other variables.</p>
+<h2>How to fix it</h2>
+<p>Usually, the fix for this issue is straightforward, you just need to remove the unused variable declaration, or its name from the declaration
+statement if it’s declared along with other variables.</p>
 <h4>Noncompliant Code Example</h4>
 <pre>
 function numberOfMinutes(hours) {
@@ -47,4 +47,27 @@ function numberOfMinutes(hours) {
   return hours * 60;
 }
 </pre>
+<p>When an array destructuring is used and some element of the array is never referenced, one might simply remove it from the destructuring.</p>
+<h4>Noncompliant Code Example</h4>
+<pre>
+const [_, params] = url.split(path);
+</pre>
+<h4>Compliant Solution</h4>
+<pre>
+const [, params] = url.split(path);
+</pre>
+<h2>Resources</h2>
+<h3>Documentation</h3>
+<ul>
+  <li> <a
+  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#ignoring_some_returned_values">MDN
+  Destructuring assignment</a> - Ignoring some values </li>
+</ul>
+<h3>Articles &amp; Blog Posts</h3>
+<ul>
+  <li> <a href="https://www.sonarsource.com/blog/common-typescript-issues-no-3-unused-local-variables-and-functions/">Phil Nash, Common TypeScript
+  Issues Nº 3: unused local variables and functions</a> </li>
+  <li> <a href="https://blog.meteor.com/an-interesting-kind-of-javascript-memory-leak-8b47d2e7f156"> David Glasser, An interesting kind of JavaScript
+  memory leak</a> </li>
+</ul>
 
