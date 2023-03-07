@@ -34,6 +34,7 @@ setInterval(replaceThing, 1000);
 <h2>How to fix it</h2>
 <p>Usually, the fix for this issue is straightforward, you just need to remove the unused variable declaration, or its name from the declaration
 statement if it’s declared along with other variables.</p>
+<h3>Code examples</h3>
 <h4>Noncompliant Code Example</h4>
 <pre>
 function numberOfMinutes(hours) {
@@ -47,6 +48,7 @@ function numberOfMinutes(hours) {
   return hours * 60;
 }
 </pre>
+<h3>Array Destructuring</h3>
 <p>When an array destructuring is used and some element of the array is never referenced, one might simply remove it from the destructuring.</p>
 <h4>Noncompliant Code Example</h4>
 <pre>
@@ -63,7 +65,7 @@ const [, params] = url.split(path);
   href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#ignoring_some_returned_values">MDN
   Destructuring assignment</a> - Ignoring some values </li>
 </ul>
-<h3>Articles &amp; Blog Posts</h3>
+<h3>Articles &amp; blog posts</h3>
 <ul>
   <li> <a href="https://www.sonarsource.com/blog/common-typescript-issues-no-3-unused-local-variables-and-functions/">Phil Nash, Common TypeScript
   Issues Nº 3: unused local variables and functions</a> </li>
