@@ -17,7 +17,7 @@ jobs:
       - uses: sonarsource/gh-action-lt-backlog/MoveCardAfterReview@v1
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
-          column-id: 16320787     # Kanban "In progress" column
+          column-id: 47fc9ee4     # Kanban "In progress" column
 
   ReviewApproved_job:
     name: Move card to review approved
@@ -29,4 +29,4 @@ jobs:
       - uses: sonarsource/gh-action-lt-backlog/MoveCardAfterReview@v1
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
-          column-id: 16320799     # Kanban "Resolved" column
+          column-id: dd10adad     # Kanban "Resolved" column

@@ -14,4 +14,4 @@ jobs:
       - uses: sonarsource/gh-action-lt-backlog/MoveCardToReview@v1
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
-          column-id: 16320793     # Kanban "In review" column
+          column-id: 14c3336d     # Kanban "In review" column
