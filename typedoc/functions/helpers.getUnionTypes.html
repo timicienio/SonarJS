@@ -20,14 +20,21 @@
 <ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
 <li class="tsd-signature tsd-anchor-link" id="getUnionTypes">get<wbr/>Union<wbr/>Types<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ts.Type</span><span class="tsd-signature-symbol">[]</span><a href="#getUnionTypes" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns an array of the union types if the provided type is a union.
+Otherwise, returns an array containing the provided type as its unique element.</p>
+
+<h3>Returns</h3><p>An array of types. It&#39;s never empty.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>type: <span class="tsd-signature-type">Type</span></h5></li></ul></div>
+<h5>type: <span class="tsd-signature-type">Type</span></h5>
+<div class="tsd-comment tsd-typography"><p>A TypeScript type.</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ts.Type</span><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/SonarSource/SonarJS/blob/a6c788e/src/linting/eslint/rules/helpers/type.ts#L68">src/linting/eslint/rules/helpers/type.ts:68</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/SonarSource/SonarJS/blob/1d8ca01/src/linting/eslint/rules/helpers/type.ts#L74">src/linting/eslint/rules/helpers/type.ts:74</a></li></ul></aside></li></ul></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://eslint.org/docs/latest/developer-guide/working-with-rules" target="_blank">ESlint dev guide</a></nav>
 <div class="tsd-navigation settings">
@@ -103,6 +110,7 @@
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isArray.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Array</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isArrayExpression.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Array<wbr/>Expression</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isArrayLikeType.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Array<wbr/>Like<wbr/>Type</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isBigIntArray.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Big<wbr/>Int<wbr/>Array</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isBigIntType.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Big<wbr/>Int<wbr/>Type</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isBinaryPlus.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Binary<wbr/>Plus</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isBooleanLiteral.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Boolean<wbr/>Literal</a></li>
@@ -128,6 +136,7 @@
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isNamespaceSpecifier.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Namespace<wbr/>Specifier</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isNullLiteral.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Null<wbr/>Literal</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isNumber.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Number</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isNumberArray.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Number<wbr/>Array</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isNumberLiteral.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Number<wbr/>Literal</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isNumberType.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Number<wbr/>Type</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isObjectDestructuring.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Object<wbr/>Destructuring</a></li>
@@ -139,6 +148,7 @@
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isSimpleRawString.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Simple<wbr/>Raw<wbr/>String</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isStaticTemplateLiteral.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Static<wbr/>Template<wbr/>Literal</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isString.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>String</a></li>
+<li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isStringArray.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>String<wbr/>Array</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isStringLiteral.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>String<wbr/>Literal</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isStringType.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>String<wbr/>Type</a></li>
 <li class="tsd-kind-function tsd-parent-kind-module"><a href="helpers.isTestCode.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>is<wbr/>Test<wbr/>Code</a></li>
