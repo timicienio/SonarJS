@@ -62,16 +62,22 @@ sequenceDiagram
 
 ```mermaid
 flowchart TB
-  A[Start] --> B{Have<br>we searched<br>for tsconfigs in<br>project<br>baseDir?}
-  B -- Yes --> C(Prepend request tsconfigs to list of found tsconfigs)
-  B -- No, or `forceUpdateTSConfigs` has been set to true --> D(Look for tsconfig files in project baseDir)
-  D --> B
-  C -->  H{Are there tsconfigs<br>left to be checked?}
-  H -- Yes, pick next tsconfig --> E(Create program with tsconfig)
-  H -- No --> G(Create program with fallback tsconfig)
-  E -->  F{Does program include the<br>file we want to analyze?}
-  G --> F
-  F -- No --> H
+  A[Start] --> RB{Request body<br>contains list<br>of tsconfigs?}
+  RB -- Yes --> PFT(Pick first tsconfig)
+  RB -- No --> HWS{Have<br>we searched<br>for tsconfigs in<br>project<br>baseDir?}
+  HWS -- Yes --> FT(check forceUpdateTSConfigs value)
+  HWS -- No --> LFT(Look for tsconfig files in project baseDir)
+  FT -- true --> LFT
+  FT -- false --> PFT
+  PFT --> CR(Create program with tsconfig)
+  LFT --> PFT
+  PN --> CR
+  ATTL -- No --> CRF(Create program with fallback tsconfig)
+  CR -->  PROK{Does program include the<br>file we want to analyze?}
+  PROK -- No --> ATTL{Are there tsconfigs<br>left to be checked?}
+  ATTL -- Yes --> PN(Pick next tsconfig)
+  PROK -- Yes --> RT(Return program)
+  CRF --> RT
 
 
 ```
@@ -79,7 +85,5 @@ flowchart TB
 2. Decide tsconfigs
 
 ```mermaid
-flowchart TB
-    Start --> Stop
 
 ```
